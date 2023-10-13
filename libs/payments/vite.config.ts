@@ -3,23 +3,7 @@ import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/paypal-store-monorepo',
-  server: {
-    port: 4200,
-    host: 'localhost',
-    proxy: {
-      "/api": {
-        target: "http://localhost:8888",
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
-
-  preview: {
-    port: 4300,
-    host: 'localhost',
-  },
+  cacheDir: '../../node_modules/.vite/payments',
 
   plugins: [react(), nxViteTsPaths()],
 

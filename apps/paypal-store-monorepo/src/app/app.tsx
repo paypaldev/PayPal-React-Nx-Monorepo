@@ -3,11 +3,17 @@ import { Route, Routes } from 'react-router-dom';
 // importing the component from the library
 import { ProductList } from '@react-monorepo/products';
 import { OrderList } from '@react-monorepo/orders';
-import { Message } from '@react-monorepo/shared-ui'
+import {Paypal} from '@react-monorepo/payments'
 
 function Home() {
-  const msg = `Sorry, your transaction could not be processed...`;
-  return <Message content={msg}></Message>;
+  const initialOptions = {
+    "clientId": "ATcbsWeJib7eBUta2p5NaO64gvVFwIjJV2vEBu9wfP_ALWWiUtlxuo0OHxeCBsv807oldJyihRjS5AzR",
+    "enable-funding": "paylater,venmo,card",
+    "disable-funding": "",
+    "data-sdk-integration-source": "integrationbuilder_sc",
+  };
+
+  return <Paypal {...initialOptions}/>;
 }
 
 export function App() {
