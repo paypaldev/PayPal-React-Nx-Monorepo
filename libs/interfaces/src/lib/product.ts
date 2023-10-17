@@ -5,3 +5,5 @@ export interface Product {
   description: string;
   imgUrl: string
 }
+
+export default Product;

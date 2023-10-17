@@ -47,7 +47,7 @@ function Home() {
 
   return (
     <div className={styles['container']}>
-      <ProductList products={products} />
+      <ProductList products={products} cart={false} />
       <Paypal {...initialOptions}/>
     </div>
   );
@@ -57,7 +57,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/products" element={<ProductList products={products}/>}></Route>
+      <Route path="/products" element={<ProductList products={products} cart={true}/>}></Route>
       <Route path="/orders" element={<OrderList />}></Route>
     </Routes>
   );
