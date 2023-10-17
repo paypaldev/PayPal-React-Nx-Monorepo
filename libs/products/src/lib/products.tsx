@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import styles from './products.module.scss';
+import { Product } from '@react-monorepo/product';
 
-/* eslint-disable-next-line */
-export interface ProductsProps {}
+export function Products(products: Product[]) {
 
-export function Products(props: ProductsProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to Products!</h1>
+      {products.map((product: Product, index: number) => (
+        <div>
+          <img src={product.imgUrl} alt={product.name} className="product-image" />
+          <h3 className="product-name">{product.name}</h3>
+          <p className="product-price">${product.price}</p>
+        </div>
+       ))}
     </div>
   );
 }

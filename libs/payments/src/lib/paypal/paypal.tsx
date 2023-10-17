@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Message } from '@react-monorepo/shared-ui';
+import styles from './paypal.module.scss';
 
 /* eslint-disable-next-line */
 export interface PaypalProps {
@@ -14,7 +15,7 @@ export function Paypal({...initialOptions}: PaypalProps) {
   const [message, setMessage] = useState("");
   
   return (
-    <div className="App">
+    <div className={styles['container']}>
       <PayPalScriptProvider options={initialOptions}>
         <PayPalButtons
           style={{
