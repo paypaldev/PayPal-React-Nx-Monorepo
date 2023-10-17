@@ -4,6 +4,7 @@ import { ProductList } from '@react-monorepo/products';
 import { OrderList } from '@react-monorepo/orders';
 import {Paypal} from '@react-monorepo/payments'
 import { Product } from '@react-monorepo/product';
+import { Total } from '@react-monorepo/shared-ui';
 
 const products:Product[] = [
   {
@@ -47,7 +48,10 @@ function Home() {
 
   return (
     <div className={styles['container']}>
-      <ProductList products={products} cart={false} />
+      <div>
+        <ProductList products={products} cart={true} />
+        <Total cart={products} />
+      </div>
       <Paypal {...initialOptions}/>
     </div>
   );
@@ -57,7 +61,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/products" element={<ProductList products={products} cart={true}/>}></Route>
+      <Route path="/products" element={<ProductList products={products} cart={false}/>}></Route>
       <Route path="/orders" element={<OrderList />}></Route>
     </Routes>
   );

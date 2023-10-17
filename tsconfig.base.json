@@ -15,12 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@react-monorepo/interfaces": ["interfaces/src/index.ts"],
       "@react-monorepo/orders": ["libs/orders/src/index.ts"],
       "@react-monorepo/payments": ["libs/payments/src/index.ts"],
       "@react-monorepo/product": ["libs/interfaces/src/index.ts"],
       "@react-monorepo/products": ["libs/products/src/index.ts"],
-      "@react-monorepo/shared-ui": ["libs/shared/ui/src/index.ts"],
-      "@react-monorepo/interfaces": ["interfaces/src/index.ts"]
+      "@react-monorepo/shared-ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

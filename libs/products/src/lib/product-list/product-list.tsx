@@ -14,7 +14,7 @@ export function ProductList({ products, cart }: ProductListProps) {
           <img src={product.imgUrl} alt={product.name} className="product-image" />
           <h3 className="product-name">{product.name}</h3>
           <p className="product-price">${product.price}</p>
-          {cart && <button>Add Button</button>}
+          {!cart && <button>Add Button</button>}
         </div>
       ))}
     </div>
